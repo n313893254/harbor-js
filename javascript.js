@@ -1,12 +1,13 @@
 var http = require('http')
 var querystring = require('querystring')
+var request = require('request');
 
 let server = {
   hostname: '119.23.129.240',
   session_id: '',
 }
 
-var login = function () {
+const login = function () {
   var postData = querystring.stringify({
       principal: 'admin',
       password: 'Harbor12345',
@@ -51,10 +52,9 @@ var login = function () {
   req.end();
 }
 
-var logout = function () {
+const logout = function () {
   var postData = querystring.stringify({
-    // beegosessionID: server.session_id,
-    beegosessionID: 'be04a84fce6586dd466adf9cf2e6759f',
+    beegosessionID: server.session_id,
   });
 
   var options = {
@@ -74,13 +74,31 @@ var logout = function () {
       console.log('Successfully logout')
     }
   });
+}
 
-  req.on('error',function(err){
-      console.error(err);
-  });
-  req.write(postData);
-  req.end();
+const search = function () {
+
 }
 
 // login()
-logout()
+// logout()
+
+
+var Test = require('./nodejs_output.js')
+
+// Test.prototype.getSearch('119.23.129.240')
+var poi = new Test.Test('http://119.23.129.240/api')
+var req = poi.getProjects().then(function (res) {
+  console.log(res.body)
+}, function (err) {
+  console.log(err)
+})
+
+// console.log(res)
+
+// var intervalID = setInterval(function () {
+//   console.log(res)
+// }, 500);
+
+
+// console.log(res)

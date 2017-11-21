@@ -1,0 +1,25 @@
+{
+  "name": "harbor",
+  "version": "1.0.0",
+  "description": "A SDK for harbor implement by Node.js",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://n313893254:1029509060git@github.com/n313893254/harbor-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n313893254/harbor-js/issues"
+  },
+  "homepage": "https://github.com/n313893254/harbor-js#readme",
+  "dependencies": {
+    "harbor_api": "^0.3.2",
+    "q": "^1.5.1",
+    "request": "^2.83.0",
+    "swagger-js-codegen": "^1.12.0"
+  }
+}
